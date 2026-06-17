@@ -54,14 +54,14 @@ export default function AICoachPanel({ currentSession, history }: AICoachPanelPr
       });
 
       const data = await res.json();
-      if (data.reply) {
+      if (res.ok && data.reply) {
         setMessages((prev) => [...prev, { role: "model", text: data.reply }]);
       } else {
-        setErrorMessage("Coach connection timed out. Please try again.");
+        setErrorMessage(data.error || "Failed to communicate with AI Coach. Make sure GEMINI_API_KEY is configured in Settings > Secrets.");
       }
     } catch (err) {
       console.error(err);
-      setErrorMessage("Could not connect to the Risk Suite servers. Verify that the server is online.");
+      setErrorMessage("Could not connect to the Risk Suite servers. Try reloading the app or verify GEMINI_API_KEY configuration in Settings > Secrets.");
     } finally {
       setIsLoading(false);
     }
