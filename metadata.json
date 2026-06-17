@@ -1,0 +1,6 @@
+{
+  "name": "Trading Discipline Companion",
+  "description": "An interactive trading session tracker and psychological desk companion built to implement the Professional Trading Contract, focusing on strict 11:30 AM shutdown protocols, trade outcome acceptance, and overtrading prevention.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
