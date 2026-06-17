@@ -53,7 +53,15 @@ export default function AICoachPanel({ currentSession, history }: AICoachPanelPr
         }),
       });
 
-      const data = await res.json();
+      const text = await res.text();
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (parseError) {
+        console.error("HTML/Text received instead of JSON:", text);
+        throw new Error("Server returned non-JSON response. Please verify that the server is initialized and the developer page has restarted.");
+      }
+
       if (res.ok && data.reply) {
         setMessages((prev) => [...prev, { role: "model", text: data.reply }]);
       } else {
