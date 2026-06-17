@@ -6,7 +6,7 @@ import SessionDesk from "./components/SessionDesk";
 import ShutdownInitiator from "./components/ShutdownInitiator";
 import StreakBoard from "./components/StreakBoard";
 import AICoachPanel from "./components/AICoachPanel";
-import { Shield, Flame, Activity, Sparkles, BookOpen, User, RotateCcw, AlertTriangle } from "lucide-react";
+import { Shield, Flame, Activity, Sparkles, BookOpen, User, RotateCcw, AlertTriangle, Brain } from "lucide-react";
 
 export default function App() {
   const [currentSession, setCurrentSession] = useState<DaySession | null>(null);
@@ -291,13 +291,13 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-indigo-500 to-rose-500 p-0.5 shadow-lg shadow-amber-500/5">
-              <div className="w-full h-full bg-zinc-950 rounded-[10px] flex items-center justify-center text-amber-400">
-                <Shield className="w-5 h-5 animate-spin-slow" />
+              <div className="w-full h-full bg-zinc-950 rounded-[10px] flex items-center justify-center text-rose-400">
+                <Brain className="w-5 h-5 animate-pulse" />
               </div>
             </div>
             <div>
               <h1 className="text-sm font-bold tracking-wider font-mono text-zinc-100 uppercase">
-                TRADING DISCIPLINE COMPANION
+                Personal Psychology Tracker
               </h1>
               <p className="text-[10px] text-zinc-400 font-sans tracking-tight uppercase">
                 Professional Trading Contract & Habit Coach Suite
